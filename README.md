@@ -33,6 +33,11 @@ Training is done on Mistral-7B-Instruct-v0.1,finetunnig is done using the datase
 python wweMCQ_train.py
 ```
 
+After fine-tuning, merging of the base Mistral model with any specialized LoRA adjustments is streamlined through a single command, enhancing the model's capabilities with minimal additional parameters.
+
+```bash
+python merge.py --base_model /../../.cache/huggingface/hub/models--mistralai--Mistral-7B-Instruct-v0.1/snapshots/2dcff66eac0c01dc50e4c41eea959968232187fe --lora_model /../../../../../finetunellm/mistral-7b-wwetuned --output_type huggingface --output_dir dir_name
+```
 ### Inferencing the Model
 
 Inferencing can be done directly using the model or by calling the API file which inturn calls the inference file
